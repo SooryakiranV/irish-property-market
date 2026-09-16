@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+
+# Environment variables and secrets
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Raw and processed data
+data/raw/*
+data/processed/*
