@@ -1,0 +1,62 @@
+check_name,status,details
+Stage 3 file exists: annual_market_summary.csv,PASS,16 rows
+Stage 3 file exists: market_2026_ytd.csv,PASS,1 rows
+Stage 3 file exists: price_growth.csv,PASS,16 rows
+Stage 3 file exists: county_market_2025.csv,PASS,26 rows
+Stage 3 file exists: county_price_change_2010_2025.csv,PASS,26 rows
+Stage 3 file exists: county_property_mix_2025.csv,PASS,26 rows
+Stage 3 file exists: annual_planning_activity.csv,PASS,35 rows
+Stage 3 file exists: planning_authority_2025.csv,PASS,31 rows
+Stage 3 file exists: market_planning_correlation.csv,PASS,16 rows
+Stage 3 file exists: key_kpis.csv,PASS,12 rows
+Columns: annual_market,PASS,All expected columns present
+Columns: market_2026_ytd,PASS,All expected columns present
+Columns: price_growth,PASS,All expected columns present
+Columns: county_market,PASS,All expected columns present
+Columns: county_price_change,PASS,All expected columns present
+Columns: county_property_mix,PASS,All expected columns present
+Columns: annual_planning,PASS,All expected columns present
+Columns: planning_authority,PASS,All expected columns present
+Columns: market_planning_correlation,PASS,All expected columns present
+Columns: key_kpis,PASS,All expected columns present
+Duplicates: annual_market,PASS,No duplicate rows
+Duplicates: market_2026_ytd,PASS,No duplicate rows
+Duplicates: price_growth,PASS,No duplicate rows
+Duplicates: county_market,PASS,No duplicate rows
+Duplicates: county_price_change,PASS,No duplicate rows
+Duplicates: county_property_mix,PASS,No duplicate rows
+Duplicates: annual_planning,PASS,No duplicate rows
+Duplicates: planning_authority,PASS,No duplicate rows
+Duplicates: market_planning_correlation,PASS,No duplicate rows
+Duplicates: key_kpis,PASS,No duplicate rows
+Non-empty output: annual_market,PASS,16 rows
+Non-empty output: market_2026_ytd,PASS,1 rows
+Non-empty output: price_growth,PASS,16 rows
+Non-empty output: county_market,PASS,26 rows
+Non-empty output: county_price_change,PASS,26 rows
+Non-empty output: county_property_mix,PASS,26 rows
+Non-empty output: annual_planning,PASS,35 rows
+Non-empty output: planning_authority,PASS,31 rows
+Non-empty output: market_planning_correlation,PASS,16 rows
+Non-empty output: key_kpis,PASS,12 rows
+Missing values: annual_market,PASS,No missing values
+Missing values: market_2026_ytd,PASS,No missing values
+Missing values: price_growth,PASS,3 missing values (review required)
+Missing values: county_market,PASS,No missing values
+Missing values: county_price_change,PASS,No missing values
+Missing values: county_property_mix,PASS,No missing values
+Missing values: annual_planning,PASS,No missing values
+Missing values: planning_authority,PASS,No missing values
+Missing values: market_planning_correlation,PASS,No missing values
+Missing values: key_kpis,PASS,No missing values
+2025 transaction reconciliation,PASS,"62,026 transactions"
+2025 transaction-value reconciliation,PASS,"€27,924,379,210.11"
+2026 YTD transaction reconciliation,PASS,"38,102 transactions"
+2026 YTD transaction-value reconciliation,PASS,"€18,403,113,524.69"
+2025 county coverage,PASS,26 counties
+County property-mix shares,PASS,Shares sum to approximately 100%
+County 2010-2025 price-change calculation,PASS,Calculations reconcile
+2025 planning applications,PASS,"39,634 applications"
+Planning grant-rate calculation,PASS,66.81%
+Planning refusal-rate calculation,PASS,7.87%
+Correlation observation count,PASS,Observation counts match pairwise complete-data calculations

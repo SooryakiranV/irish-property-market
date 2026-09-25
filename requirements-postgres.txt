@@ -1,0 +1,5 @@
+SQLAlchemy==2.0.43
+psycopg2-binary==2.9.10
+
+dbt-core==1.12.5
+dbt-postgres==1.11.0

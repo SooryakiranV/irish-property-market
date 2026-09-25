@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('POSTGRES_DB', 'irish_property_market') }}"
+    schema: raw
+    description: Raw PostgreSQL tables loaded by the Python ingestion pipeline.
+    tables:
+      - name: ppr_transactions
+        description: Cleaned Residential Property Price Register rows loaded as text before dbt typing.
+      - name: rppi_series
+        description: Residential Property Price Index series loaded as text before dbt typing.
+      - name: planning_applications
+        description: National planning application records loaded as text before dbt typing.

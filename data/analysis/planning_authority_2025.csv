@@ -1,0 +1,32 @@
+planning_authority,applications,granted_applications,refused_applications,residential_units,grant_rate_pct,refusal_rate_pct
+Cork County Council,3494,2190,182,0.0,62.68,5.21
+Dublin City Council,3093,1710,205,1420.0,55.29,6.63
+Donegal County Council,2516,1893,129,1966.0,75.24,5.13
+Dun Laoghaire Rathdown County Council,2026,1358,175,0.0,67.03,8.64
+Galway County Council,1920,1534,192,1096.0,79.9,10.0
+Fingal County Council,1779,1069,309,0.0,60.09,17.37
+Meath County Council,1691,1138,130,3545.0,67.3,7.69
+Kildare County Council,1680,854,226,2356.0,50.83,13.45
+Tipperary County Council,1615,1055,54,897.0,65.33,3.34
+Wexford County Council,1606,1158,205,2196.0,72.1,12.76
+Mayo County Council,1488,1033,82,811.0,69.42,5.51
+Kerry County Council,1422,1025,150,215.0,72.08,10.55
+Limerick County Council,1418,1085,118,1190.0,76.52,8.32
+Wicklow County Council,1400,863,138,564.0,61.64,9.86
+Clare County Council,1215,960,65,1715.0,79.01,5.35
+South Dublin County Council,1174,854,82,5273.0,72.74,6.98
+Waterford City and County Council,1139,677,72,1376.0,59.44,6.32
+Louth County Council,1025,695,112,2226.0,67.8,10.93
+Laois County Council,994,566,42,1317.0,56.94,4.23
+Kilkenny County Council,976,744,52,628.0,76.23,5.33
+Offaly County Council,832,432,40,808.0,51.92,4.81
+Cavan County Council,829,597,30,1051.0,72.01,3.62
+Westmeath County Council,693,438,72,1099.0,63.2,10.39
+Roscommon County Council,674,399,66,458.0,59.2,9.79
+Monaghan County Council,651,452,27,487.0,69.43,4.15
+Sligo County Council,573,401,23,193.0,69.98,4.01
+Carlow County Council,473,300,32,472.0,63.42,6.77
+Galway City Council,348,274,49,406.0,78.74,14.08
+Cork City Council,344,290,14,0.0,84.3,4.07
+Longford County Council,288,213,38,235.0,73.96,13.19
+Leitrim County Council,258,224,9,248.0,86.82,3.49

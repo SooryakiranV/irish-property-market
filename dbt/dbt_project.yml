@@ -1,0 +1,26 @@
+name: "irish_property_market"
+version: "1.0.0"
+config-version: 2
+
+profile: "irish_property_market"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+  - "logs"
+
+models:
+  irish_property_market:
+    staging:
+      +schema: staging
+      +materialized: table
+    marts:
+      +schema: analytics
+      +materialized: table

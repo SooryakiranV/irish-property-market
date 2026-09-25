@@ -1,0 +1,17 @@
+market_metric,planning_metric,pearson_correlation,observations,period_start,period_end
+transactions,applications,0.7318,201,2010-01-01,2026-09-01
+transactions,granted_applications,0.7202,201,2010-01-01,2026-09-01
+transactions,refused_applications,0.7291,201,2010-01-01,2026-09-01
+transactions,residential_units,0.7051,201,2010-01-01,2026-09-01
+mean_price,applications,0.7819,201,2010-01-01,2026-09-01
+mean_price,granted_applications,0.6795,201,2010-01-01,2026-09-01
+mean_price,refused_applications,0.7039,201,2010-01-01,2026-09-01
+mean_price,residential_units,0.6909,201,2010-01-01,2026-09-01
+median_price,applications,0.784,201,2010-01-01,2026-09-01
+median_price,granted_applications,0.6809,201,2010-01-01,2026-09-01
+median_price,refused_applications,0.6995,201,2010-01-01,2026-09-01
+median_price,residential_units,0.6986,201,2010-01-01,2026-09-01
+national_rppi,applications,0.8277,199,2010-01-01,2026-09-01
+national_rppi,granted_applications,0.7662,199,2010-01-01,2026-09-01
+national_rppi,refused_applications,0.7786,199,2010-01-01,2026-09-01
+national_rppi,residential_units,0.7463,199,2010-01-01,2026-09-01
