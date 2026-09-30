@@ -1,98 +1,80 @@
-# PostgreSQL Integration Stage
+# PostgreSQL Data Warehouse Stage
 
-This stage loads the existing cleaned project datasets into PostgreSQL:
+## Purpose
 
-- PPR transactions
-- RPPI series
-- Planning Applications
+PostgreSQL provides the core relational data layer for the Irish Property Market Analytics Platform.
 
-It does not add a new CSO dataset. RPPI is the only CSO-sourced dataset currently used by the pipeline.
+The database separates the pipeline into three logical schemas:
 
-## Database
+- `raw` — source data loaded from the ingestion layer
+- `staging` — cleaned and standardised data produced by dbt
+- `analytics` — analytical marts used by downstream analysis and BigQuery
 
-Database name:
+## Raw Layer
 
-```text
-irish_property_market
-```
+The `raw` schema stores the ingested source datasets:
 
-Schemas:
+- `raw.ppr_transactions`
+- `raw.rppi_series`
+- `raw.planning_applications`
 
-```text
-raw
-staging
-analytics
-```
+The raw layer preserves the source-oriented structure before analytical transformations.
 
-## Files
+## Staging Layer
 
-```text
-sql/001_create_schemas.sql
-sql/002_create_tables.sql
-sql/003_build_staging.sql
-sql/004_build_analytics.sql
-sql/005_create_indexes.sql
-sql/validation/database_validation.sql
-src/db_config.py
-src/load_postgres.py
-```
+The staging layer is built using dbt.
 
-## Required Inputs
+The staging models standardise fields, data types, dates and analytical flags while preserving the underlying source information.
 
-These files must exist before loading PostgreSQL:
+The main staging models are:
 
-```text
-data/processed/ppr_cleaned.csv
-data/processed/rppi_cleaned.csv
-data/processed/planning/planning_applications_cleaned.csv
-```
+- `stg_ppr_transactions`
+- `stg_rppi_series`
+- `stg_planning_applications`
 
-## Environment Setup
+## Analytics Layer
 
-Create `.env` from `.env.example` and set your PostgreSQL password:
+The analytics layer contains the transformed datasets used for analysis:
 
-```powershell
-Copy-Item .env.example .env
-notepad .env
-```
+- `county_market`
+- `monthly_market`
+- `planning_activity`
+- `market_planning_correlation`
+- `property_market_summary`
 
-Expected PostgreSQL settings:
+These models provide the aggregated outputs required for market, county, planning and relationship analysis.
 
-```text
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=irish_property_market
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=your_password_here
-```
+## Data Quality
 
-## Run The Load
+The PostgreSQL stage was validated through automated checks covering:
 
-From the project root:
+- Row counts
+- Required fields
+- Dates
+- Transaction prices
+- County coverage
+- Analytical aggregates
+- Planning metrics
+- Correlation observation counts
 
-```powershell
-cd "C:\Users\M S I\irish-property-market"
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements-postgres.txt
-python .\src\load_postgres.py
-```
+The final pipeline QA completed with:
 
-## Validate In PostgreSQL
+**61 checks passed, 0 failed.**
 
-If `psql` is not already on your PATH, add PostgreSQL 17 first:
+## Downstream Flow
 
-```powershell
-$env:Path += ";C:\Program Files\PostgreSQL\17\bin"
-```
+PostgreSQL is the transformation and relational data layer of the pipeline.
 
-Then run:
+The completed flow is:
 
-```powershell
-psql -U postgres -d irish_property_market -f .\sql\validation\database_validation.sql
-```
+Python ingestion
+→ PostgreSQL raw
+→ dbt staging and analytics
+→ BigQuery analytical warehouse
+→ Power BI dashboard
 
-The validation output should show populated `raw`, `staging`, and `analytics` tables. The `raw` and `staging` row counts for each source should match.
+Apache Airflow orchestrates the pipeline tasks.
 
-## Next Stage
+## Project Status
 
-Airflow should be added later, after this database stage is stable and validated.
+The PostgreSQL stage is complete and integrated into the end-to-end analytics pipeline.

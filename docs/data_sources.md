@@ -2,34 +2,68 @@
 
 ## 1. Residential Property Price Register (PPR)
 
-**Role:** Primary transaction-level data source.
+**Source:** Property Services Regulatory Authority / Residential Property Price Register
 
-The Residential Property Price Register will be used to analyse residential property transactions in Ireland.
+**Role:** Primary transaction-level property dataset.
 
-**Organisation:** Property Services Regulatory Authority (PSRA)
+The PPR provides residential property sale records in Ireland, including sale date, address, county, Eircode where available, transaction price, property description and related indicators.
 
-**Status:** Source investigation pending.
+The dataset is used as the primary source for:
+- Property transaction volumes
+- Transaction values
+- Mean and median transaction prices
+- County-level market analysis
+- New versus second-hand property analysis
+- Historical market trends
 
----
-
-## 2. Residential Property Price Index (RPPI)
-
-**Role:** Independent house-price index benchmark for PPR transaction trends.
-
-The RPPI data is already part of the current project pipeline and is combined with monthly PPR transaction metrics.
-
-**Organisation:** Central Statistics Office (CSO)
-
-**Status:** Ingested and cleaned.
+**Project status:** Investigated, ingested, cleaned, validated and loaded into PostgreSQL.
 
 ---
 
-## 3. National Planning Applications
+## 2. CSO Residential Property Price Index (RPPI)
 
-**Role:** Planning and development activity data.
+**Source:** Central Statistics Office (CSO)
 
-Planning application data will be used to investigate relationships between planning activity, property transactions and property-market trends.
+**Role:** Independent property-price benchmark.
 
-**Organisation:** Department of Housing, Local Government and Heritage
+The CSO Residential Property Price Index is used alongside PPR transaction data to provide a standardised benchmark for property-price evolution over time.
 
-**Status:** Ingested and cleaned.
+The RPPI is not treated as a duplicate transaction dataset. It provides an independent index-based view of the Irish residential property market.
+
+**Project status:** Investigated, ingested, validated and loaded into PostgreSQL.
+
+---
+
+## 3. National Planning Applications Dataset
+
+**Source:** Department of Housing, Local Government and Heritage / data.gov.ie
+
+**Role:** Planning and development activity dataset.
+
+The dataset contains planning application records including planning authority, application details, dates, decisions and residential-unit information where available.
+
+It is used for:
+- Planning application volumes
+- Granted and refused applications
+- Residential units associated with applications
+- Planning activity over time
+- Planning-authority analysis
+- Comparison of planning activity with property-market indicators
+
+Planning applications are analysed as an independent dataset and are not joined to individual PPR transactions.
+
+**Project status:** Investigated, ingested, cleaned, validated and loaded into PostgreSQL.
+
+---
+
+## Source Integration
+
+The three sources provide complementary perspectives:
+
+| Source | Analytical role |
+|---|---|
+| PPR | Property transactions |
+| CSO RPPI | Property-price index benchmark |
+| Planning Applications | Development and planning activity |
+
+The datasets are integrated at appropriate analytical levels such as time and geography rather than treating records from different sources as one-to-one matches.
