@@ -1,0 +1,3 @@
+# Install Apache Airflow core separately using its matching official constraints.
+# This provider release supports Apache Airflow 2.11.0 and newer.
+apache-airflow-providers-standard==1.21.0

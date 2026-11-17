@@ -65,15 +65,15 @@ The final pipeline QA completed with:
 
 PostgreSQL is the transformation and relational data layer of the pipeline.
 
-The completed flow is:
+The DAG in `airflow/dags/irish_property_pipeline.py` orchestrates the flow:
 
-Python ingestion
+Airflow: Python ingestion
 → PostgreSQL raw
 → dbt staging and analytics
 → BigQuery analytical warehouse
 → Power BI dashboard
 
-Apache Airflow orchestrates the pipeline tasks.
+The DAG is manually triggered. Its PostgreSQL reload truncates this project's raw, staging, and analytics tables. Its BigQuery load replaces the mapped tables. See [`airflow.md`](airflow.md) for dependencies, configuration, safe validation, and execution effects.
 
 ## Project Status
 
