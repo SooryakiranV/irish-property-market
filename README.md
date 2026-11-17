@@ -9,8 +9,6 @@ A data engineering and analytics project that brings together Irish property tra
 - PostgreSQL and BigQuery data layers
 - Power BI dashboard
 
-![Pipeline architecture](docs/architecture.png)
-
 ## Data and flow
 
 The project uses the Residential Property Price Register, CSO Residential Property Price Index, and national planning-application data.
