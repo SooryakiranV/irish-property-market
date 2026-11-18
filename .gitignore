@@ -17,3 +17,7 @@ dbt/target/
 dbt/logs/
 dbt/dbt_packages/
 logs/
+
+# Local cloud credentials
+credentials/
+*service-account*.json

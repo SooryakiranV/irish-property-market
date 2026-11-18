@@ -3,6 +3,9 @@ from typing import Any
 
 import pandas as pd
 import psycopg2
+from dotenv import load_dotenv
+
+load_dotenv()
 from google.cloud import bigquery
 
 
@@ -10,7 +13,7 @@ from google.cloud import bigquery
 # CONFIGURATION
 # ============================================================
 
-POSTGRES_HOST = os.getenv("POSTGRES_HOST", "172.29.192.1")
+POSTGRES_HOST = os.getenv("POSTGRES_HOST", "localhost")
 POSTGRES_PORT = int(os.getenv("POSTGRES_PORT", "5432"))
 POSTGRES_DB = os.getenv("POSTGRES_DB", "irish_property_market")
 POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
@@ -28,7 +31,7 @@ BIGQUERY_DATASET = os.getenv(
 
 BIGQUERY_LOCATION = os.getenv(
     "BIGQUERY_LOCATION",
-    "US",
+    "EU",
 )
 
 
